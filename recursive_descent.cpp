@@ -52,9 +52,13 @@ int GetE ()
         {
             value = value + addValue;
         }
-        else
+        else if (op == '-')
         {
             value = value - addValue;
+        }
+        else
+        {
+            printf ("Syntax error! Error in %s. It is ['+' '-'] error!\n", __func__);
         }
     }
 
@@ -79,13 +83,16 @@ int GetT ()
         {
             value = value * addValue;
         }
-        else
+        else if (op == '/')
         {
             value = value / addValue;
         }
+        else
+        {
+            printf ("Syntax error! Error in %s. It is ['*' '/'] error!\n", __func__);
+        }
     }
 
-    printf ("%d\n", value);
     return value;
 }
 
